@@ -155,55 +155,64 @@
     </form>
 
     <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
-        import { getDatabase, ref, update } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-database.js";
-        import { getAuth } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-auth.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
+    import { getDatabase, ref, update } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-database.js";
+    import { getAuth } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-auth.js";
 
-        const firebaseConfig = {
-            apiKey: "AIzaSyDqfJUI0Orck3nDCB2Ulm-AgiZcWV92KcM",
-            authDomain: "democheck-c2d99.firebaseapp.com",
-            databaseURL: "https://democheck-c2d99-default-rtdb.asia-southeast1.firebasedatabase.app",
-            projectId: "democheck-c2d99",
-            storageBucket: "democheck-c2d99.appspot.com",
-            messagingSenderId: "870409634136",
-            appId: "1:870409634136:web:68bad3814e92012d7ae52d",
-            measurementId: "G-KB6RD571R1"
-        };
+    const firebaseConfig = {
+        apiKey: "AIzaSyDqfJUI0Orck3nDCB2Ulm-AgiZcWV92KcM",
+        authDomain: "democheck-c2d99.firebaseapp.com",
+        databaseURL: "https://democheck-c2d99-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "democheck-c2d99",
+        storageBucket: "democheck-c2d99.appspot.com",
+        messagingSenderId: "870409634136",
+        appId: "1:870409634136:web:68bad3814e92012d7ae52d",
+        measurementId: "G-KB6RD571R1"
+    };
 
-        const app = initializeApp(firebaseConfig);
-        const db = getDatabase(app);
-        const auth = getAuth(app);
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    const auth = getAuth(app);
 
-        document.getElementById("paymentForm").addEventListener("submit", async (e) => {
-            e.preventDefault();
+    function generateTransactionID() {
+        return "TXN" + Math.floor(100000 + Math.random() * 900000);
+    }
 
-            const address = document.getElementById("address").value;
-            const phone = document.getElementById("phone").value;
-            const paymentMethod = document.getElementById("paymentMethod").value;
+    document.getElementById("paymentForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-            const orderIDs = JSON.parse(localStorage.getItem("pendingOrderIDs")) || [];
+        const address = document.getElementById("address").value;
+        const phone = document.getElementById("phone").value;
+        const paymentMethod = document.getElementById("paymentMethod").value;
 
-            const updates = {};
+        const orderIDs = JSON.parse(localStorage.getItem("pendingOrderIDs")) || [];
 
-            orderIDs.forEach(orderId => {
-                updates[`orders/${orderId}/status`] = "awaiting";
-                updates[`orders/${orderId}/address`] = address;
-                updates[`orders/${orderId}/phone`] = phone;
-                updates[`orders/${orderId}/paymentMethod`] = paymentMethod;
-            });
+        const updates = {};
 
-            await update(ref(db), updates)
-                .then(() => {
-                    alert("Order placed successfully!");
-                    localStorage.removeItem("pendingOrderIDs");
-                    window.location.href = "Myorder.html"; // or your orders tracking page
-                })
-                .catch((err) => {
-                    console.error("Update failed", err);
-                    alert("Failed to submit order details.");
-                });
+        orderIDs.forEach(orderId => {
+            updates[`orders/${orderId}/status`] = "awaiting";
+            updates[`orders/${orderId}/address`] = address;
+            updates[`orders/${orderId}/phone`] = phone;
+            updates[`orders/${orderId}/payment`] = {
+                method: paymentMethod,
+                status: paymentMethod === "COD" ? "pending" : "paid",
+                transactionID: paymentMethod === "COD" ? "" : generateTransactionID()
+            };
         });
-    </script>
+
+        await update(ref(db), updates)
+            .then(() => {
+                alert("Order placed successfully!");
+                localStorage.removeItem("pendingOrderIDs");
+                window.location.href = "Myorder.html";
+            })
+            .catch((err) => {
+                console.error("Update failed", err);
+                alert("Failed to submit order details.");
+            });
+    });
+</script>
+
 </body>
 </html>
 <script>
