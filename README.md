@@ -76,17 +76,21 @@ Bridging the digital divide for local businesses by providing:
 - **📊 Inventory Management Tools**
 
 ## 🖼️ Screenshots
-1. Vendor dashboard interface
-   ![E-commerce Platform Preview](.\images\Screenshots\Screenshot (237).png)
-2. Product listing page
-   ![E-commerce Platform Preview](.\images\Screenshots\Screenshot (238).png)
-3. Shopping cart flow
-   ![E-commerce Platform Preview](.\images\Screenshots\Screenshot (239).png)
-4. Order management views
-   ![E-commerce Platform Preview](.\images\Screenshots\Screenshot (240).png)
-5. Review the system in action
-   ![E-commerce Platform Preview](.\images\Screenshots\Screenshot (241).png)
+1. Vendor dashboard interface  
+   ![Vendor Dashboard](./images/Screenshots/Screenshot%20(237).png)
 
+2. Product listing page  
+   ![Product Listing](./images/Screenshots/Screenshot%20(238).png)
+
+3. Shopping cart flow  
+   ![Shopping Cart](./images/Screenshots/Screenshot%20(239).png)
+
+4. Order management views  
+   ![Order Management](./images/Screenshots/Screenshot%20(240).png)
+
+5. Review system in action  
+   ![Review System](./images/Screenshots/Screenshot%20(241).png)
+   
 ## 🛠️ Setup Guide
 1. Clone repository:
    ```bash
