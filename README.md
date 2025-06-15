@@ -83,13 +83,11 @@ Bridging the digital divide for local businesses by providing:
    ![Product Listing](./images/Screenshots/Screenshot%20(238).png)
 
 3. Shopping cart flow  
-   ![Shopping Cart](./images/Screenshots/Screenshot%20(239).png)
+   ![Shopping Cart](./images/Screenshots/Screenshot%20(243).png)
 
 4. Order management views  
-   ![Order Management](./images/Screenshots/Screenshot%20(240).png)
+   ![Order Management](./images/Screenshots/Screenshot%20(247).png)
 
-5. Review system in action  
-   ![Review System](./images/Screenshots/Screenshot%20(241).png)
    
 ## 🛠️ Setup Guide
 1. Clone repository:
