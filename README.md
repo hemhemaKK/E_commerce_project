@@ -2,6 +2,9 @@
 
 A simplified yet powerful e-commerce solution designed to help local businesses establish their online presence. This platform enables small vendors to manage products, process orders, and engage customers through an intuitive interface.
 
+## Demo Link
+link - 
+
 ## 🌐 Project Overview
 Bridging the digital divide for local businesses by providing:
 
@@ -10,7 +13,7 @@ Bridging the digital divide for local businesses by providing:
 - **🗂️ Smart Categorization** with customer-friendly filtering
 - **⭐ Trust-Building** through ratings and reviews
 - **📦 Order Tracking** with vendor-side management
-- **🎁 Promotional Tools** including coupons and special offers
+- **🎁 Discount Applied** including coupons and special offers
 
 ## 🚀 Core Features
 
@@ -18,22 +21,19 @@ Bridging the digital divide for local businesses by providing:
 - Secure login/registration for vendors and customers
 - Firebase Authentication with email/password
 - Separate dashboards for vendors and customers
-- Email verification and basic security protocols
 
 ### 🛍️ Vendor Product Management
 - Add/edit/remove products with images
-- Set prices, descriptions, and inventory levels
+- Set prices, descriptions
 - Control product visibility
 - Category assignment
 
 ### 🔎 Product Discovery
 - Live search functionality
 - Advanced filtering by:
-  - Price range
+  - Price sorting
   - Customer ratings
-  - Availability
   - Categories
-- Clean, intuitive browsing interface
 
 ### 🛒 Shopping Cart System
 - Add/remove products
@@ -53,38 +53,39 @@ Bridging the digital divide for local businesses by providing:
 ### 🌟 Customer Reviews
 - Authenticated rating system
 - Verified purchase reviews only
-- Vendor cannot rate own products
+- Vendor cannot rate their own products
 
 ### 🏷️ Category Management
 - Hierarchical product organization
 - Main categories (Electronics, Clothing, etc.)
-- Subcategories for better navigation
 
 ### 💸 Promotional Tools
-- Create discount codes
+- Create a discount 
 - Percentage-based discounts
-- Expiration dates
-- Product-specific promotions
 
 ## 🛠️ Technology Stack
 - **Frontend:** HTML5, CSS3, JavaScript (ES6+)
-- **Backend:** Firebase Realtime Database
+- **Backend:** Firebase Realtime Database and for image Cloudinary
 - **Authentication:** Firebase Auth
-- **Hosting:** (To be determined)
+- **Hosting:** Netlify
 
 ## 🔮 Future Roadmap
 - **📱 Enhanced Mobile Experience**
-- **📈 Business Analytics Dashboard**
 - **🔔 Real-time Notifications**
 - **🌍 Multi-language Support**
 - **📊 Inventory Management Tools**
 
 ## 🖼️ Screenshots
 1. Vendor dashboard interface
+   ![E-commerce Platform Preview](.\images\Screenshots\Screenshot (237).png)
 2. Product listing page
+   ![E-commerce Platform Preview](.\images\Screenshots\Screenshot (238).png)
 3. Shopping cart flow
+   ![E-commerce Platform Preview](.\images\Screenshots\Screenshot (239).png)
 4. Order management views
-5. Review system in action
+   ![E-commerce Platform Preview](.\images\Screenshots\Screenshot (240).png)
+5. Review the system in action
+   ![E-commerce Platform Preview](.\images\Screenshots\Screenshot (241).png)
 
 ## 🛠️ Setup Guide
 1. Clone repository:
