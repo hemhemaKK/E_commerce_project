@@ -3,7 +3,7 @@
 A simplified yet powerful e-commerce solution designed to help local businesses establish their online presence. This platform enables small vendors to manage products, process orders, and engage customers through an intuitive interface.
 
 ## Demo Link
-link - 
+link - https://hemhemakk.github.io/E_commerce_project/
 
 ## 🌐 Project Overview
 Bridging the digital divide for local businesses by providing:
